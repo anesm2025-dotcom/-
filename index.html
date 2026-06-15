@@ -653,6 +653,15 @@ footer span { color: var(--green-light); }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 </style>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z846KEQSBZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Z846KEQSBZ');
+</script>
 </head>
 <body>
 
@@ -929,17 +938,6 @@ document.querySelectorAll('.prog-card, .tl-item, .vision-item').forEach((el, i) 
   io.observe(el);
 });
 </script>
-<script>
-fetch('https://counterapi.dev/api/anesm2025/visits/up')
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById('visitor-count').innerText =
-      data.count || data.Count || 'خطأ';
-  })
-  .catch(err => {
-    document.getElementById('visitor-count').innerText = 'خطأ';
-    console.log(err);
-  });
-</script>
+
 </body>
 </html>

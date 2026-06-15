@@ -654,8 +654,15 @@ footer span { color: var(--green-light); }
 }
 </style>
 </head>
-  <script src="https://counterapi.com/c.js" async></script>
-<div class="counterapi"></div>
+<p>عدد الزوار: <span id="visitor-count">0</span></p>
+
+<script>
+fetch('https://counterapi.com/api/mysite123/visits/up')
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('visitor-count').innerText = data.Count;
+  });
+</script>
 <body>
 
 <div class="particles" id="particles"></div>

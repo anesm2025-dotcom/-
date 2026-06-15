@@ -654,15 +654,6 @@ footer span { color: var(--green-light); }
 }
 </style>
 </head>
-<p>عدد الزوار: <span id="visitor-count">0</span></p>
-
-<script>
-fetch('https://counterapi.com/api/mysite123/visits/up')
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById('visitor-count').innerText = data.Count;
-  });
-</script>
 <body>
 
 <div class="particles" id="particles"></div>
@@ -938,7 +929,15 @@ document.querySelectorAll('.prog-card, .tl-item, .vision-item').forEach((el, i) 
   io.observe(el);
 });
 </script>
+<p>عدد الزوار: <span id="visitor-count">0</span></p>
 
+<script>
+fetch('https://counterapi.com/api/mysite123/visits/up')
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('visitor-count').innerText = data.Count;
+  });
+</script>
 </body>
 </html>
 add visitor counter
